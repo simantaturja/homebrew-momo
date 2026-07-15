@@ -15,13 +15,11 @@ cask "momo" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Momo.app"
 
-  zap trash: [
-    "~/Library/Application Support/Momo",
-  ]
+  zap trash: "~/Library/Application Support/Momo"
 
   caveats <<~EOS
     Momo is not notarized yet, so Gatekeeper may block the first launch. Either:
